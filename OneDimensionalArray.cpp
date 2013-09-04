@@ -10,28 +10,23 @@ int main(int argc, char const *argv[]) {
 	input.open("input.txt", ios::in);
 	output.open("output.txt", ios::out);
 	
-	int vertical, horizontal;
-	input >> vertical;
-	input >> horizontal;
+	int number;
+	input >> number;
 	
-	int arr[vertical][horizontal];
+	int arr[number];
 
 	if (input) {		
 		while (!input.eof()) {
-			for (int i = 0; i < vertical; ++i) {
-				for (int j = 0; j < horizontal; ++j) {
-					input >> arr[i][j];
-				}
+			for (int i = 0; i < number; i++) {
+					input >> arr[i];
 			}	
 		}
 	}
 
-	for (int i = 0; i < vertical; ++i) {
-		for (int j = 0; j < horizontal; ++j) {
-			output << arr[i][j];
-		}
-		output << endl;
+	for (int i = 0; i < number; i++) {
+		output << arr[i];
 	}
+
 
 	input.close();
 	output.close();
